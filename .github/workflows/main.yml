@@ -26,4 +26,4 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: cd /home/azi/web/scripts && bash ./studio-deploy.sh
