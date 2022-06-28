@@ -1,4 +1,4 @@
 ---
 home: true
-heroText: Azi Studio
+heroText: Azi Studio is COMING!
 ---

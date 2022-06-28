@@ -13,8 +13,6 @@ jobs:
           node-version: 14.x
       - name: Install dependencies
         run: npm install
-      - name: echo
-        run: echo 'start build'
       - name: build
         run: npm run docs:build
       - name: tar
