@@ -26,7 +26,7 @@ jobs:
             REMOTE_USER: ${{ secrets.USER }}
             SSH_PRIVATE_KEY: ${{ secrets.KEY }}
             ARGS: "-rltgoDzvO --delete"
-            SOURCE: "dist"
+            SOURCE: "dist.tar"
             TARGET: "/home/azi/web/dist/studio"
       - name: Deploy
         uses: appleboy/ssh-action@master
