@@ -8,7 +8,10 @@ module.exports = {
   dest: './dist',
   bundler: viteBundler({
     viteOptions: {
-      base: './'
+      base: './',
+      build: {
+        assetsDir: 'studio-assets'
+      }
     }
   })
 }
