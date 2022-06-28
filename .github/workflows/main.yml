@@ -20,6 +20,15 @@ jobs:
       - name: tar
         run: tar -czvf dist.tar dist # 目标文件进行打包
       - name: Create Release
-        # You may pin to the exact commit or the version.
-        # uses: ncipollo/release-action@58ae73b360456532aafd58ee170c045abbeaee37
-        uses: ncipollo/release-action@v1.10.0
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
