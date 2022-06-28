@@ -5,6 +5,7 @@ module.exports = {
   title: 'Azi Studio',
   description: '',
   base: '',
+  dest: '/dist',
   bundler: viteBundler({
     viteOptions: {
       base: './'
