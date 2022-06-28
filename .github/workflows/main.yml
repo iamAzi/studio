@@ -18,7 +18,16 @@ jobs:
       - name: build
         run: npm run docs:build
       - name: tar
-        run: tar -czvf dist.tar dist # 目标文件进行打包
+        run: tar -czvf dist.tar dist && ls -l # 目标文件进行打包
+      - name: Upload to Server
+        uses: easingthemes/ssh-deploy@main
+        env:
+            REMOTE_HOST: ${{ secrets.HOST }}
+            REMOTE_USER: ${{ secrets.USER }}
+            SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+            ARGS: "-rltgoDzvO --delete"
+            SOURCE: "dist"
+            TARGET: "/home/azi/web/dist/studio"
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
